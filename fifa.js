@@ -5,7 +5,7 @@ export const fifaData = [
     "Stage": "Group 1",
     "Stadium": "Pocitos",
     "City": "Montevideo",
-    "Home Team Name": "France",
+    "HomeTeamName": "France",
     "Home Team Goals": 4,
     "Away Team Goals": 1,
     "Away Team Name": "Mexico",
