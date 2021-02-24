@@ -31,8 +31,9 @@ function getFinals(data){
     const newArray = data.filter(function(item){
     return item['Stage'] === 'Final';
     })
+    console.log(newArray.length)
     return newArray
-
+    
 } 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -81,10 +82,11 @@ hint: the strings returned need to exactly match the string in step 4.
  */
 
 function getWinnersByYear(array, getYearsCB, getWinnersCB) {
-    let getYear= getYearsCB(array, getFinals);
-    let getWinner= getWinnersCB(array, getFinals);
-        console.log(`In ${getYear}, ${getWinner} won the world cup!`)}
-        
+    return getYearsCB(array).map(function(a,i){ 
+        return `In ${a}, ${getWinnersCB()[i]} won the world cup!`
+    }) 
+}
+
 
 
 
@@ -99,10 +101,9 @@ Use the higher order function getAverageGoals to do the following:
  Example of invocation: getAverageGoals(getFinals(fifaData));
 */
 
-function getAverageGoals(/* code here */) {
-   /* code here */
-}
-
+function getAverageGoals(array) {
+    const score = array.reduce((acc, item)=> acc + item["Home Team Goals"] + item["Away Team Goals"],0);
+    return (score/array.length).toFixed(2);}
 
 
 
